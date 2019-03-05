@@ -89,6 +89,12 @@ model_classifier.compile(optimizer=optimizer_classifier, loss = 'binary_crossent
 # data loading
 df3 = pd.read_pickle('upper_body_atts.pkl')
 
+def name(x):
+    name = str.split(x,'/')
+    return '../img_data/img/' + name[1] + '/' + name[2]
+    
+df3['img_name'] = df3['img_name'].apply(lambda x:name(x))
+
 img = []
 landmarks = []
 attribs = []

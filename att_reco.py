@@ -101,7 +101,7 @@ landmarks = []
 attribs = []
 for i in range(100):
     #print i
-    a = cv2.imread('../' + df3.loc[i,'img_name'])
+    a = cv2.imread(df3.loc[i,'img_name'])
     a = cv2.resize(a,(400,400))
     img.append(a)
     lnd = df3.loc[i,'landmarks']

@@ -8,6 +8,7 @@ from optparse import OptionParser
 import pickle
 import cv2
 import pandas as pd
+import pdb
 
 from keras import backend as K
 from keras.optimizers import Adam, SGD, RMSprop
@@ -94,7 +95,7 @@ def name(x):
     return '../img_data/img/' + name[1] + '/' + name[2]
     
 df3['img_name'] = df3['img_name'].apply(lambda x:name(x))
-
+pdb.set_trace()
 img = []
 landmarks = []
 attribs = []

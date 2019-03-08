@@ -92,14 +92,14 @@ df3 = pd.read_pickle('upper_body_atts.pkl')
 
 def name(x):
     name = str.split(x,'/')
-    return '../img_data/img/' + name[1] + '/' + name[2]
+    return '/fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/' + name[1] + '/' + name[2]
     
 df3['img_name'] = df3['img_name'].apply(lambda x:name(x))
-pdb.set_trace()
+#pdb.set_trace()
 img = []
 landmarks = []
 attribs = []
-for i in range(100):
+for i in range(3):
     #print i
     a = cv2.imread(df3.loc[i,'img_name'])
     a = cv2.resize(a,(400,400))

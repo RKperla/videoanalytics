@@ -27,8 +27,6 @@ from keras_frcnn.RoiPoolingConv import RoiPoolingConv
 from keras.layers import GlobalAveragePooling2D, GlobalMaxPooling2D, TimeDistributed
 from keras.layers import Flatten, Dense, Input, Conv2D, MaxPooling2D, Dropout
 
-gpu_options = tf.GPUOptions(allow_growth=True)
-session = tf.InteractiveSession(config=tf.ConfigProto(gpu_options=gpu_options))
 
 K.set_learning_phase(1) #set learning phase
 
@@ -57,18 +55,18 @@ num_rois = 6
 # compile times on theano tend to be very high, so we use smaller ROI pooling regions to workaround
 
 if K.backend() == 'tensorflow':
-    pooling_regions = 4
-    input_shape = (num_rois,4,4,512)
+    pooling_regions = 7
+    input_shape = (num_rois,7,7,512)
 elif K.backend() == 'theano':
     pooling_regions = 7
     input_shape = (num_rois,512,7,7)
 
 # define the base network (resnet here, can be VGG, Inception, etc)
-shared_layers = nn.nn_base(img_input, trainable=True)
+shared_layers = nn.nn_base(img_input, trainable=False)
 
 
 out_roi_pool = mylayer(pooling_regions, 6)([shared_layers, roi_input])
-#print out_roi_pool
+print out_roi_pool
 
 out = (Flatten(name='flatten'))(out_roi_pool)
 out = (Dense(4096, activation='relu', name='fc1'))(out)
@@ -100,12 +98,12 @@ def name(x):
     return '/fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/' + name[1] + '/' + name[2]
     
 df3['img_name'] = df3['img_name'].apply(lambda x:name(x))
-pdb.set_trace()
+#pdb.set_trace()
 img = []
 landmarks = []
 attribs = []
 for i in range(30):
-    print i
+    #print i
     a = cv2.imread(df3.loc[i,'img_name'])
     a = cv2.resize(a,(400,400))
     img.append(a)
@@ -120,10 +118,10 @@ mlb = MultiLabelBinarizer()
 X = np.array(img)
 X2 = np.array(landmarks)
 Y = mlb.fit_transform(attribs)
-X2 = (X2/16).astype(int)
+X2 = (X2/4).astype(int)
 print 'shapes of input and output', X.shape, X2.shape, Y.shape
-pdb.set_trace()
-checkpoint = ModelCheckpoint("upper_body_atts_model.h5", monitor='val_loss', verbose=1, save_best_only=True, save_weights_only=False, mode='auto', period=1)
-model_classifier.fit(x = [X,X2],y= Y, batch_size=1, epochs=2, validation_split=0.2,callbacks = [checkpoint])
+
+checkpoint = ModelCheckpoint("upper_body_atts_model.h5", monitor='val_acc', verbose=1, save_best_only=True, save_weights_only=False, mode='auto', period=1)
+model_classifier.fit(x = [X,X2],y= Y, batch_size=1, epochs=2,validation_split=0.2,callbacks = [checkpoint])
 
 

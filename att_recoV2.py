@@ -76,7 +76,7 @@ out = (Dropout(0.5))(out)
 out = (Dense(2048, activation='relu', name='fc2'))(out)
 out = (Dropout(0.5))(out)
 print 'no of classes', nb_classes
-out_class = (Dense(73, activation='sigmoid', kernel_initializer='zero'))(out)
+out_class = (Dense(1000, activation='sigmoid', kernel_initializer='zero'))(out)
 
 model_classifier = Model([img_input, roi_input], out_class)
 
@@ -90,46 +90,47 @@ except:
 
 optimizer = Adam(lr=1e-5)
 optimizer_classifier = Adam(lr=1e-5)
-model_classifier.compile(optimizer=optimizer_classifier, loss = 'binary_crossentropy')
+model_classifier.compile(optimizer=optimizer_classifier, loss = 'binary_crossentropy',metrics= ['accuracy'])
 
 # data loading
-df3 = pd.read_pickle('temp.pkl')
+df3 = pd.read_pickle('upper_body_atts.pkl')
 import pdb
-pdb.set_trace()
+#pdb.set_trace()
 def name(x):
     name = str.split(x,'/')
     return '/fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/' + name[1] + '/' + name[2]
     
 df3['img_name'] = df3['img_name'].apply(lambda x:name(x))
-pdb.set_trace()
-img = []
-landmarks = []
-attribs = []
-<<<<<<< HEAD
-for i in range(30):
-    print i
-=======
-for i in range(100):
-    #print i
->>>>>>> 454166c4b00ff9b0aa2d7b09f86c6a7752a5f600
-    a = cv2.imread(df3.loc[i,'img_name'])
-    a = cv2.resize(a,(400,400))
-    img.append(a)
-    lnd = df3.loc[i,'landmarks']
-    landmarks.append(lnd)
-    atts = df3.loc[i,'atts']
-    attribs.append(atts)
 
-from sklearn.preprocessing import MultiLabelBinarizer
-mlb = MultiLabelBinarizer()
+# removing the samples without any attribute present in it
+sample = df3['atts'].apply(lambda x: x.shape[0]>0)
+df4 =df3[sample]
+df4 = df4.reset_index(drop = True)
+#pdb.set_trace()
+def get_batch(i):
+    a = cv2.imread(df4.loc[i,'img_name'])
+    a = cv2.resize(a,(400,400))        
+    img = np.array(a).reshape(1,400,400,3)
+    lnd = df4.loc[i,'landmarks']
+    landmarks = (np.array(lnd)/8).astype(int).reshape(1,6,4)
+    atts = df4.loc[i,'atts']
+    labels = np.array([0 if k not in atts else 1 for k in range(1000)]).reshape(1,1000)
+    return img, landmarks, labels
 
-X = np.array(img)
-X2 = np.array(landmarks)
-Y = mlb.fit_transform(attribs)
-X2 = (X2/16).astype(int)
-print 'shapes of input and output', X.shape, X2.shape, Y.shape
-pdb.set_trace()
-checkpoint = ModelCheckpoint("upper_body_atts_model.h5", monitor='val_loss', verbose=1, save_best_only=True, save_weights_only=False, mode='auto', period=1)
-model_classifier.fit(x = [X,X2],y= Y, batch_size=1, epochs=2, validation_split=0.2,callbacks = [checkpoint])
-
-
+train_loss = []
+train_acc = []
+for j in range(50):
+    print 'epoch number:', j
+    los = 0
+    acc = 0
+    for i in range(70000):
+        if i % 1000 ==0: print 'epoch and sample:', j, i
+        X,X2,Y = get_batch(i)
+        history = model_classifier.fit(x=[X,X2], y= Y)
+        los = los + np.array(history.history['loss'])
+        acc = acc + np.array(history.history['acc'])
+    train_loss.append(los)
+    train_acc.append(acc)
+model_classifier.save_weights('atts_model.h5')
+np.save('loss.csv',train_loss)
+#pdb.set_trace()

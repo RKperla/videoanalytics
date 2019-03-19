@@ -127,7 +127,7 @@ for j in range(20):
         if i % 1000 ==0: 
             print 'epoch and sample:', j, i
         X,X2,Y = get_batch(i)
-        history = model_classifier.fit(x=[X,X2], y= Y)
+        history = model_classifier.fit(x=[X,X2], y= Y, verbose = 2)
         los = los + np.array(history.history['loss'])
         acc = acc + np.array(history.history['acc'])
     train_loss.append(los)

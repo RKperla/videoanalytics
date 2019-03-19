@@ -119,18 +119,19 @@ def get_batch(i):
 
 train_loss = []
 train_acc = []
-for j in range(50):
+for j in range(20):
     print 'epoch number:', j
     los = 0
     acc = 0
-    for i in range(70000):
-        if i % 1000 ==0: print 'epoch and sample:', j, i
+    for i in range(50000):
+        if i % 1000 ==0: 
+            print 'epoch and sample:', j, i
         X,X2,Y = get_batch(i)
         history = model_classifier.fit(x=[X,X2], y= Y)
         los = los + np.array(history.history['loss'])
         acc = acc + np.array(history.history['acc'])
     train_loss.append(los)
     train_acc.append(acc)
-model_classifier.save_weights('atts_model.h5')
-np.save('loss.csv',train_loss)
+    model_classifier.save_weights('atts_model.h5')
+    np.save('loss.csv',train_loss)
 #pdb.set_trace()

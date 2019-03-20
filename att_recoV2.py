@@ -129,6 +129,9 @@ for j in range(20):
         history = model_classifier.fit(x=[X,X2], y= Y, verbose = 0)
         los = los + np.array(history.history['loss'])
         acc = acc + np.array(history.history['acc'])
+        if i %1000 ==0:
+            print 'saving model', j, i
+            model_classifier.save_weights('att1kmodel.h5')
     train_loss.append(los)
     train_acc.append(acc)
     model_classifier.save_weights('atts_model.h5')

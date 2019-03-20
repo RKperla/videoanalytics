@@ -71,19 +71,21 @@ out_roi_pool = mylayer(pooling_regions, 6)([shared_layers, roi_input])
 #print out_roi_pool
 
 out = (Flatten(name='flatten'))(out_roi_pool)
-out = (Dense(4096, activation='relu', name='fc1'))(out)
+out = (Dense(4096, activation='relu', name='fc5'))(out)
 out = (Dropout(0.5))(out)
-out = (Dense(2048, activation='relu', name='fc2'))(out)
+out = (Dense(2048, activation='relu', name='fc6'))(out)
 out = (Dropout(0.5))(out)
 print 'no of classes', nb_classes
 out_class = (Dense(1000, activation='sigmoid', kernel_initializer='zero'))(out)
 
 model_classifier = Model([img_input, roi_input], out_class)
 
+model_w  = 'vgg16_weights_tf_dim_ordering_tf_kernels.h5'
+
 
 try:
-	print('loading weights from {}'.format(C.base_net_weights))
-	#model_classifier.load_weights(C.base_net_weights, by_name=True)
+	print('loading weights from pretrained model')
+	model_classifier.load_weights(model_w, by_name=True)
 except:
 	print('Could not load pretrained model weights. Weights can be found in the keras application folder \
 		https://github.com/fchollet/keras/tree/master/keras/applications')
@@ -95,10 +97,14 @@ model_classifier.compile(optimizer=optimizer_classifier, loss = 'binary_crossent
 # data loading
 df3 = pd.read_pickle('upper_body_atts.pkl')
 import pdb
-#pdb.set_trace()
+pdb.set_trace()
+
 def name(x):
     name = str.split(x,'/')
-    return '/fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/' + name[1] + '/' + name[2]
+    return '/Users/1024329/Downloads/DeepFashion/img_n/' + name[1] + '/' + name[2]
+
+# local path : /Users/1024329/Downloads/DeepFashion/img_n/
+# server path : /fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/
     
 df3['img_name'] = df3['img_name'].apply(lambda x:name(x))
 
@@ -119,6 +125,7 @@ def get_batch(i):
 
 train_loss = []
 train_acc = []
+pdb.set_trace()
 for j in range(20):
     print 'epoch number:', j
     los = 0

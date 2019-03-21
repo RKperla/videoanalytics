@@ -88,7 +88,11 @@ model_classifier.compile(optimizer=optimizer_classifier, loss = 'binary_crossent
 
 def name(x):
     name = str.split(x,'/')
-    return '/Users/1024329/Downloads/DeepFashion/img_n/' + name[1] + '/' + name[2]
+    return '/fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/' + name[1] + '/' + name[2]
+
+# local path : /Users/1024329/Downloads/DeepFashion/img_n/
+# server path : /fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/
+
     
 df3 = pd.read_pickle('upper_body_atts.pkl')
 df3['img_name'] = df3['img_name'].apply(lambda x:name(x))

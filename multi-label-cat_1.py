@@ -1,3 +1,5 @@
+
+
 from __future__ import division
 import random
 import pprint
@@ -41,19 +43,21 @@ from keras import regularizers, optimizers
 import pandas as pd
 import numpy as np
 
+print 'loading dataframe'
 df = pd.read_pickle("./upper_body_atts.pkl")
-
+#df= df[0:10000]
 df = df[['img_name','landmarks','atts']]
 
 df["labels"] = df["atts"].apply(lambda x:list(x))
 
-
 def name(x):
     name = str.split(x,'/')
-    return '/Users/1024329/Downloads/DeepFashion/img_n/' + name[1] + '/' + name[2]
+    return '/fashion-attribute/att_recognition/img_bbox_data/img_n/'+ name[1]+'/'  + name[2]
+    #return '/fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/' + name[1] + '/' + name[2]
+#/fashion-attribute/storage_bucket/small_data_set/work/train/Blazer/Double-Breasted_Blazer
 
 # local path : /Users/1024329/Downloads/DeepFashion/img_n/
-# server path : /fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/
+# server path : /fashion-attribute/att_recognition/img_bbox_data/img_n/
     
 df['Filenames'] = df['img_name'].apply(lambda x:name(x))
 
@@ -63,35 +67,115 @@ df['Filenames'] = df['img_name'].apply(lambda x:name(x))
 sample = df['atts'].apply(lambda x: x.shape[0]>0)
 df4 =df[sample]
 
+
+# In[3]:
+
+
+df_cat = pd.read_csv('list_attr_cloth.csv')
+
+
+# In[4]:
+
+
+select = np.array(df_cat[df_cat.att_type == 1 ].index)
+
+
+# In[5]:
+
+
+df4['cat1atts'] = df4['labels'].apply(lambda x: [item for item in select if item in x])
+
+
+# In[6]:
+
+
+sample = df4['cat1atts'].apply(lambda x: len(x)>0)
+df5 =df4[sample]
+
+
+# In[11]:
+
+
+df5 = df5.reset_index(drop= True)
+
+
+# In[18]:
+
+
+vals = np.array([])
+for i in range(df5.shape[0]):
+    if i%10000 ==0: print i
+    vals = np.concatenate([vals,df5.loc[i,'cat1atts']]) 
+
+
+# In[40]:
+y = np.bincount(vals.astype(int))
+ii = np.nonzero(y)[0]
+
+s = zip(ii,y[ii])
+
+
+# In[60]:
+
+
+sa = [ i[0] for i in s if i[1] > 1000]
+
+
+# In[68]:
+
+
+print len(sa)
+
+
+# In[63]:
+
+
+df5['cat1atts'] = df5['cat1atts'].apply(lambda x: [item for item in sa if item in x])
+
+
+# In[65]:
+
+
+sample = df5['cat1atts'].apply(lambda x: len(x)>0)
+df5 =df5[sample]
+
+
+# In[66]:
+
+
+print df5.shape
+
+
+# In[67]:
+
+
+
+print 'creating image generators'
+#import pdb
+#pdb.set_trace()
 img_reso = 224
 datagen=ImageDataGenerator(rescale=1./255.)
 test_datagen=ImageDataGenerator(rescale=1./255.)
-train_generator=datagen.flow_from_dataframe(
-dataframe=df4[:100000],
-directory="",
-x_col="Filenames",
-y_col="labels",
-batch_size=32,
-seed=42,
-shuffle=True,
-class_mode="categorical",
-classes=range(1000),
-target_size=(img_reso,img_reso))
+train_generator=datagen.flow_from_dataframe(dataframe=df5[0:37000],directory="", 
+        x_col="Filenames",y_col="cat1atts",batch_size=32,
+        seed=42,shuffle=True,class_mode="categorical",
+        classes=list(sa),target_size=(img_reso,img_reso))
 
+print 'validation generator'
 valid_generator=test_datagen.flow_from_dataframe(
-dataframe=df4[100000:120000],
+        dataframe=df5[37000:40000],
 directory="",
 x_col="Filenames",
-y_col="labels",
+y_col="cat1atts",
 batch_size=32,
 seed=42,
 shuffle=True,
 class_mode="categorical",
-classes=range(1000),
+classes=list(sa),
 target_size=(img_reso,img_reso))
 
-test_generator=test_datagen.flow_from_dataframe(
-dataframe=df[120000:],
+print 'test generator'
+test_generator=test_datagen.flow_from_dataframe(dataframe=df5[40000:],
 directory="",
 x_col="Filenames",
 batch_size=1,
@@ -99,6 +183,9 @@ seed=42,
 shuffle=False,
 class_mode=None,
 target_size=(img_reso,img_reso))
+
+
+# In[69]:
 
 
 
@@ -123,39 +210,34 @@ img_input = Input(shape=input_shape_img)
 # define the base network (resnet here, can be VGG, Inception, etc)
 shared_layers = nn.nn_base(img_input, trainable=False)
 
-
 out = (Flatten(name='flatten'))(shared_layers)
 out = (Dense(4096, activation='relu', name='fc5'))(out)
 out = (Dropout(0.5))(out)
 out = (Dense(2048, activation='relu', name='fc6'))(out)
 out = (Dropout(0.5))(out)
-#out = (Dense(512, activation='relu', name='fc7'))(out)
-out_class = (Dense(1000, activation='sigmoid'))(out)
+out = (Dense(512, activation='relu', name='fc7'))(out)
+out = (Dropout(0.5))(out)
+out_class = (Dense(15, activation='sigmoid'))(out)
 
 model_classifier = Model(img_input, out_class)
-
 
 try:
 	print('loading weights from pretrained model')
 	model_classifier.load_weights('vgg16_weights_tf_dim_ordering_tf_kernels.h5', by_name=True)
 except:
-	print('Could not load pretrained model weights. Weights can be found in the keras application folder \
-		https://github.com/fchollet/keras/tree/master/keras/applications')
+	print('Could not load pretrained model weights. Weights can be found in the keras application folder 		https://github.com/fchollet/keras/tree/master/keras/applications')
 
 model_classifier.compile(optimizers.rmsprop(lr=0.0001, decay=1e-6),loss="binary_crossentropy",metrics=["accuracy"])
 
 
-checkpoint = ModelCheckpoint("vgg16_atts.h5", monitor='val_loss', verbose=1, save_best_only=True, save_weights_only=False, mode='min', period=1)
-
+checkpoint = ModelCheckpoint("cat1_atts.h5", monitor='val_loss', verbose=1, save_best_only=True, save_weights_only=False, mode='min', period=1)
 
 
 STEP_SIZE_TRAIN=train_generator.n//train_generator.batch_size
 STEP_SIZE_VALID=valid_generator.n//valid_generator.batch_size
 STEP_SIZE_TEST=test_generator.n//test_generator.batch_size
 model_classifier.fit_generator(generator=train_generator,
-                    steps_per_epoch=STEP_SIZE_TRAIN,
-                    validation_data=valid_generator,
-                    validation_steps=STEP_SIZE_VALID,
-                    epochs=10, use_multiprocessing=True, callbacks = [checkpoint]
-)
-
+                   steps_per_epoch=STEP_SIZE_TRAIN,
+                   validation_data=valid_generator,
+                   validation_steps=STEP_SIZE_VALID,
+                   epochs=50, use_multiprocessing=True, callbacks = [checkpoint])

@@ -1,0 +1,1001 @@
+,att_name,att_type
+0,a-line,3
+1,abstract,1
+2,abstract chevron,1
+3,abstract chevron print,1
+4,abstract diamond,1
+5,abstract floral,1
+6,abstract floral print,1
+7,abstract geo,1
+8,abstract geo print,1
+9,abstract paisley,1
+10,abstract pattern,1
+11,abstract print,1
+12,abstract printed,1
+13,abstract stripe,1
+14,acid,2
+15,acid wash,2
+16,americana,5
+17,angeles,5
+18,animal,1
+19,animal print,1
+20,ankle,3
+21,applique,2
+22,arrow collar,4
+23,art,5
+24,asymmetric,3
+25,asymmetrical,3
+26,asymmetrical hem,4
+27,athletic,5
+28,audrey,5
+29,babe,5
+30,babydoll,5
+31,back bow,4
+32,back cutout,4
+33,back knit,4
+34,back lace,4
+35,back striped,4
+36,backless,4
+37,baja,3
+38,bandage,3
+39,bandana,1
+40,bandana print,1
+41,barbie,5
+42,baroque,1
+43,baroque print,1
+44,baseball,5
+45,basic,5
+46,basquiat,5
+47,batwing,4
+48,beach,5
+49,bead,2
+50,beaded,2
+51,beaded chiffon,2
+52,beaded collar,4
+53,beaded sheer,2
+54,beaded shift,3
+55,beatles,5
+56,bed,5
+57,bejeweled,2
+58,bell,4
+59,bell-sleeve,4
+60,bella,5
+61,belted,4
+62,belted chiffon,4
+63,belted floral,4
+64,belted floral print,4
+65,belted lace,4
+66,belted maxi,4
+67,belted plaid,4
+68,bermuda,3
+69,bib,3
+70,big,3
+71,bike,5
+72,biker,5
+73,bird,1
+74,bird print,1
+75,blah,5
+76,bleach,2
+77,bleached,2
+78,bleached denim,2
+79,blurred,5
+80,boat neck,4
+81,bodycon,3
+82,bodycon midi,3
+83,boho,5
+84,bold,5
+85,botanical,1
+86,botanical print,1
+87,bow,4
+88,bow-back,4
+89,bow-front,4
+90,box,3
+91,box pleat,3
+92,box-pleated,3
+93,boxy,3
+94,boxy crop,3
+95,boxy knit,3
+96,boxy lace,3
+97,boxy pocket,4
+98,boxy striped,1
+99,boyfriend,5
+100,braided,4
+101,breton,1
+102,breton stripe,1
+103,brocade,2
+104,brooklyn,5
+105,brooklyn nets,5
+106,brushstroke,1
+107,brushstroke print,1
+108,burnout,2
+109,bustier,3
+110,butterfly,1
+111,butterfly print,1
+112,button,4
+113,button-front,4
+114,buttoned,4
+115,cable,2
+116,cable knit,2
+117,cable-knit,2
+118,caged,3
+119,california,5
+120,camera,5
+121,cami,3
+122,cami crop,3
+123,cami maxi,3
+124,camo,1
+125,camouflage,1
+126,candy,5
+127,canvas,2
+128,cap-sleeve,4
+129,capri,3
+130,cardio,5
+131,cargo,3
+132,cat,5
+133,chambray,2
+134,chambray drawstring,2
+135,checked,1
+136,checkered,1
+137,cheetah,1
+138,chenille,2
+139,chevron,1
+140,chevron print,1
+141,chic,5
+142,chiffon,2
+143,chiffon floral,1
+144,chiffon lace,2
+145,chiffon layered,2
+146,chiffon maxi,3
+147,chiffon paneled,3
+148,chiffon pleated,3
+149,chiffon shift,3
+150,chiffon shirt,2
+151,chiffon surplice,4
+152,chiffon-paneled,3
+153,chino,2
+154,chunky,2
+155,chunky knit,2
+156,cinched,4
+157,circle,1
+158,cities,5
+159,city,5
+160,civil,5
+161,clashist,1
+162,classic,5
+163,classic cotton,2
+164,classic crew,4
+165,classic crew neck,4
+166,classic denim,2
+167,classic fit,3
+168,classic knit,2
+169,classic pocket,4
+170,classic skinny,3
+171,classic striped,1
+172,classic v-neck,4
+173,classic woven,2
+174,clean,2
+175,clean wash,2
+176,cloud,2
+177,cloud wash,2
+178,coast,5
+179,coated,2
+180,coffee,5
+181,collar,4
+182,collar lace,4
+183,collared,4
+184,collarless,4
+185,collarless faux,4
+186,colorblock,1
+187,colorblock pocket,4
+188,colorblocked,1
+189,combo,3
+190,combo maxi,3
+191,contrast,4
+192,contrast trim,4
+193,contrast-trimmed,4
+194,convertible,4
+195,corduroy,2
+196,cotton,2
+197,cotton drawstring,2
+198,cotton knit,2
+199,cotton-blend,2
+200,cover-up,3
+201,cowl,4
+202,cowl neck,4
+203,cozy,3
+204,crepe,2
+205,crepe shift,3
+206,crepe woven,2
+207,crew,4
+208,crew neck,4
+209,crinkled,2
+210,crisscross,4
+211,crisscross-back,4
+212,crochet,2
+213,crochet crop,3
+214,crochet embroidered,2
+215,crochet floral,1
+216,crochet fringe,4
+217,crochet knit,2
+218,crochet lace,2
+219,crochet maxi,3
+220,crochet mesh,2
+221,crochet overlay,2
+222,crochet-paneled,3
+223,crochet-trimmed,4
+224,crocheted,2
+225,crocheted lace,2
+226,crop,3
+227,cropped,3
+228,cropped knit,3
+229,cross-back,4
+230,crossback,4
+231,cuffed,4
+232,cuffed denim,2
+233,cuffed-sleeve,4
+234,curved,4
+235,curved hem,4
+236,cut,3
+237,cute,5
+238,cutoff,3
+239,cutout,3
+240,cutout lace,2
+241,cutout maxi,3
+242,cutout sheath,3
+243,cutout-back,4
+244,dainty,5
+245,daisy,1
+246,daisy print,1
+247,damask,2
+248,daring,5
+249,dark,5
+250,darling,5
+251,deep v-neck,4
+252,deep-v,4
+253,defyant,5
+254,denim,2
+255,denim drawstring,2
+256,denim pencil,3
+257,denim shift,3
+258,denim shirt,2
+259,denim skater,3
+260,denim utility,2
+261,desert,5
+262,destroyed,5
+263,devil,5
+264,diamond,1
+265,diamond print,1
+266,dip-dye,2
+267,dip-dyed,2
+268,distressed,2
+269,distressed low-rise,3
+270,distressed mid-rise,3
+271,distressed skinny,3
+272,ditsy,1
+273,ditsy floral,1
+274,ditsy floral print,1
+275,doll,5
+276,dolman,4
+277,dolman sleeve,4
+278,dolman-sleeve,4
+279,dolphin,4
+280,dolphin hem,4
+281,doodle,5
+282,dot,1
+283,dots,1
+284,dotted,1
+285,double-breasted,4
+286,drape-front,4
+287,draped,4
+288,draped open-front,4
+289,draped shawl,4
+290,draped surplice,4
+291,drapey,3
+292,drawstring,4
+293,dream,5
+294,dreamcatcher,5
+295,dreamer,5
+296,drop waist,4
+297,drop-sleeve,4
+298,drop-waist,4
+299,dropped,4
+300,dye,2
+301,dynamite,5
+302,eagle,5
+303,edge,5
+304,eiffel,5
+305,elasticized,2
+306,elegant,5
+307,elephant,4
+308,elephant print,4
+309,embellished,2
+310,embroidered,2
+311,embroidered fit,3
+312,embroidered floral,1
+313,embroidered gauze,2
+314,embroidered gauze peasant,3
+315,embroidered lace,2
+316,embroidered maxi,3
+317,embroidered mesh,2
+318,embroidered peasant,3
+319,embroidered shift,3
+320,embroidered woven,2
+321,embroidery,2
+322,enchanted,5
+323,ethereal,5
+324,everyday,5
+325,eyelash,2
+326,eyelash knit,2
+327,eyelash lace,2
+328,eyelet,2
+329,eyelet fit,3
+330,faded,2
+331,fair,2
+332,fair isle,2
+333,fan,5
+334,fancy,5
+335,faux,2
+336,faux fur,2
+337,faux leather,2
+338,faux leather mini,3
+339,faux leather moto,3
+340,faux leather paneled,3
+341,faux leather pencil,3
+342,faux leather skater,3
+343,faux leather varsity,3
+344,faux leather-paneled,3
+345,faux leather-trimmed,4
+346,faux shearling,2
+347,faux suede,2
+348,faux-wrap,3
+349,feather,2
+350,festive,5
+351,field,5
+352,fisherman,5
+353,fit,3
+354,fit flare,3
+355,fit skinny,3
+356,fitted,3
+357,fitted v-neck,4
+358,flare,3
+359,flared,3
+360,flat,4
+361,flat front,4
+362,flat-front,4
+363,flawless,5
+364,flirty,5
+365,floral,1
+366,floral flutter,1
+367,floral knit,2
+368,floral lace,2
+369,floral lace mini,3
+370,floral lace sheath,3
+371,floral lace skater,3
+372,floral maxi,3
+373,floral mesh,2
+374,floral midi,3
+375,floral mini,3
+376,floral paisley,1
+377,floral pattern,1
+378,floral peasant,3
+379,floral pleated,3
+380,floral print,1
+381,floral print skater,3
+382,floral print strapless,4
+383,floral print surplice,4
+384,floral shift,3
+385,floral skater,3
+386,floral surplice,4
+387,floral textured,1
+388,floral-embroidered,1
+389,flounce,4
+390,flounce maxi,3
+391,flounced,4
+392,flower,1
+393,flowy,3
+394,floyd,5
+395,fluted,4
+396,flutter,4
+397,flutter sleeve,4
+398,flutter-sleeve,4
+399,foil,1
+400,fold-over,3
+401,foldover,3
+402,folk,1
+403,folk print,1
+404,foulard,2
+405,fox,5
+406,france,5
+407,frayed,2
+408,free spirit,5
+409,french,2
+410,french terry,2
+411,fresh,5
+412,frida,5
+413,fringe,4
+414,fringed,4
+415,fur,2
+416,fuzzy,2
+417,fuzzy knit,2
+418,galaxy,5
+419,garden,5
+420,garden party,5
+421,gathered waistline,4
+422,gaucho,3
+423,gauze,2
+424,gauze maxi,3
+425,gauze peasant,3
+426,gauzy,2
+427,gem,2
+428,genuine,5
+429,geo,1
+430,geo pattern,1
+431,geo print,1
+432,geo stripe,1
+433,georgette,2
+434,gingham,2
+435,giraffe,1
+436,giraffe print,1
+437,girl,5
+438,girls,5
+439,glass,2
+440,glitter,2
+441,graphic,1
+442,graphic muscle,3
+443,graphic racerback,4
+444,grid,1
+445,grid print,1
+446,grunge,5
+447,guns,5
+448,halen,5
+449,harem,3
+450,heart,1
+451,heart print,1
+452,heat,5
+453,heathered,2
+454,heathered knit,2
+455,heathered stripe,1
+456,heathered v-neck,4
+457,hem,4
+458,hepburn,5
+459,heroes,5
+460,herringbone,2
+461,high-low,3
+462,high-neck,4
+463,high-rise,3
+464,high-rise skinny,3
+465,high-slit,4
+466,high-slit maxi,4
+467,high-waist,4
+468,high-waisted,4
+469,hood,4
+470,hooded,4
+471,hooded maxi,4
+472,hooded utility,4
+473,houndstooth,1
+474,ikat,1
+475,ikat print,1
+476,illusion,4
+477,illusion neckline,4
+478,inset,5
+479,internet,5
+480,island,5
+481,isle,5
+482,jacquard,2
+483,joie,5
+484,kahlo,5
+485,kaleidoscope,1
+486,kaleidoscope print,1
+487,kangaroo,4
+488,kangaroo pocket,4
+489,keyhole,4
+490,kid,5
+491,killin,5
+492,kiss,5
+493,kitty,5
+494,knee-length,3
+495,knit,2
+496,knit lace,2
+497,knit longline,3
+498,knit maxi,3
+499,knit mini,3
+500,knit open,4
+501,knit pencil,3
+502,knit pocket,4
+503,knit raglan,4
+504,knit shawl,4
+505,knit skater,3
+506,knit stripe,1
+507,knit striped,1
+508,knit trapeze,3
+509,knit v-neck,4
+510,knotted,4
+511,kurt,3
+512,la,5
+513,lace,2
+514,lace layered,2
+515,lace maxi,3
+516,lace mesh,2
+517,lace midi,3
+518,lace mini,3
+519,lace overlay,2
+520,lace panel,2
+521,lace paneled,2
+522,lace pencil,3
+523,lace peplum,4
+524,lace pleated,2
+525,lace print,2
+526,lace sheath,3
+527,lace sheer,2
+528,lace shift,3
+529,lace skater,3
+530,lace sleeve,4
+531,lace trim,4
+532,lace-paneled,2
+533,lace-trim,4
+534,lace-trimmed,4
+535,lace-up,4
+536,lacy,2
+537,ladder-back,4
+538,lady,5
+539,lakers,5
+540,lapel,4
+541,laser,5
+542,lattice,2
+543,layered,2
+544,leaf,1
+545,leaf print,1
+546,leather,2
+547,leather mini,3
+548,leather moto,3
+549,leather paneled,2
+550,leather pencil,3
+551,leather peplum,4
+552,leather quilted,2
+553,leather skater,3
+554,leather trimmed,4
+555,leather varsity,3
+556,leather-paneled,2
+557,leather-trimmed,4
+558,leave,1
+559,led,2
+560,leopard,1
+561,leopard print,1
+562,life,5
+563,light,5
+564,lightning,5
+565,linen,1
+566,linen-blend,1
+567,logo,5
+568,long sleeve,4
+569,long-sleeve,4
+570,long-sleeved,4
+571,longline,3
+572,longline shirt,3
+573,loop,2
+574,loose,2
+575,loose-knit,2
+576,lounge,5
+577,love,5
+578,lover,5
+579,low-rise,3
+580,low-rise skinny,3
+581,loyal,5
+582,luxe,5
+583,m-slit,4
+584,m-slit maxi,4
+585,mandala,1
+586,mandala print,1
+587,mandarin,5
+588,map,5
+589,marble,1
+590,marble print,1
+591,marilyn,5
+592,marilyn monroe,5
+593,marled,1
+594,marled stripe,1
+595,matelot,5
+596,maxi,3
+597,medallion,1
+598,medallion print,1
+599,medium,3
+600,meow,5
+601,mesh,2
+602,mesh overlay,2
+603,mesh panel,2
+604,mesh paneled,2
+605,mesh racerback,4
+606,mesh-paneled,2
+607,mesh-trimmed,4
+608,metallic,2
+609,miami,5
+610,mickey,5
+611,mickey mouse,5
+612,mid rise,3
+613,mid rise skinny,3
+614,mid-rise,3
+615,mid-rise skinny,3
+616,midi,3
+617,mina,5
+618,mineral,2
+619,mineral wash,2
+620,mini,3
+621,minnie,5
+622,minnie mouse,5
+623,mirrored,5
+624,mixed,1
+625,mixed print,1
+626,mixed stripe,1
+627,mob,5
+628,mock,4
+629,mock neck,4
+630,mock-neck,4
+631,mod,5
+632,modernist,5
+633,monroe,5
+634,moon,5
+635,morning,5
+636,mosaic,1
+637,mosaic print,1
+638,moto,3
+639,multi-stripe,1
+640,muscle,3
+641,muse,5
+642,nautical,1
+643,nautical stripe,1
+644,nautical striped,1
+645,neck ribbed,4
+646,neck skater,4
+647,neck striped,4
+648,neckline,4
+649,neon,2
+650,neoprene,2
+651,nets,2
+652,netted,2
+653,new york,5
+654,night,5
+655,notched collar,4
+656,notorious,5
+657,ny,5
+658,nyc,5
+659,nylon,2
+660,off-the-shoulder,4
+661,oil,2
+662,ombre,1
+663,one-button,4
+664,one-shoulder,4
+665,open-back,4
+666,open-front,4
+667,open-knit,4
+668,open-shoulder,4
+669,organza,2
+670,origami,2
+671,ornate,1
+672,ornate paisley,1
+673,ornate print,1
+674,overlay,2
+675,overlay sheath,3
+676,oversized,3
+677,oxford,5
+678,paint,1
+679,paint splatter,1
+680,painted,1
+681,paisley,1
+682,paisley print,1
+683,palm,1
+684,palm print,1
+685,palm springs,1
+686,palm tree,1
+687,pan,5
+688,panel,2
+689,paneled,2
+690,paradise,5
+691,paris,5
+692,party,5
+693,patched,2
+694,patchwork,2
+695,pattern,1
+696,patterned,1
+697,peasant,3
+698,pencil,3
+699,peplum,4
+700,perforated,2
+701,performance,5
+702,pima,2
+703,pin,4
+704,pineapple,5
+705,pink,5
+706,pinstripe,1
+707,pinstriped,1
+708,pintuck,2
+709,pintuck pleated,2
+710,pintucked,2
+711,pizza,5
+712,pj,5
+713,plaid,2
+714,plaid shirt,2
+715,please,5
+716,pleat,2
+717,pleated,2
+718,pleated skater,3
+719,pleated woven,2
+720,pocket,4
+721,pointelle,2
+722,polka dot,1
+723,polo,3
+724,pom-pom,1
+725,ponte,2
+726,popcorn,5
+727,popover,3
+728,posh,5
+729,power,5
+730,print,1
+731,print racerback,4
+732,print satin,2
+733,print scuba,2
+734,print shift,3
+735,print shirt,1
+736,print skater,3
+737,print smock,3
+738,print smocked,3
+739,print strapless,4
+740,print strappy,4
+741,print surplice,4
+742,print tulip,3
+743,print v-neck,4
+744,print woven,1
+745,printed,1
+746,puffer,3
+747,pullover,3
+748,purl,2
+749,quilted,2
+750,quirky,5
+751,racerback,4
+752,rad,5
+753,raga,5
+754,raglan,4
+755,raglan sleeve,4
+756,rainbow,5
+757,raw,3
+758,raw-cut,3
+759,rebel,5
+760,red,5
+761,refined,5
+762,regime,5
+763,relaxed,5
+764,retro,5
+765,reverse,5
+766,reversible,5
+767,rhinestone,2
+768,rib,2
+769,rib-knit,2
+770,ribbed,2
+771,ribbed stripe,1
+772,ribbed-knit,2
+773,ringer,1
+774,ripped,2
+775,rise,3
+776,rise skinny,3
+777,roll,5
+778,rolling,5
+779,rolling stones,5
+780,roman,5
+781,rose,5
+782,rose skater,3
+783,roses,5
+784,round,3
+785,ruched,2
+786,ruffle,2
+787,ruffle trim,4
+788,ruffled,2
+789,rugby,5
+790,rugby stripe,1
+791,rugby striped,1
+792,run,5
+793,running,5
+794,rustic,5
+795,safari,5
+796,sateen,2
+797,satin,2
+798,scallop,4
+799,scalloped,4
+800,scoop,4
+801,scoop-neck,4
+802,scuba,2
+803,scuba skater,3
+804,sea,5
+805,seam,2
+806,seamless,2
+807,seaside,5
+808,seersucker,2
+809,self-tie,4
+810,semi-sheer,2
+811,sequin,2
+812,sequined,2
+813,shaggy,2
+814,shark,5
+815,shawl,4
+816,shearling,2
+817,sheath,3
+818,sheer,2
+819,sheer-paneled,2
+820,shift,3
+821,shirred,2
+822,shirt,3
+823,shopping,5
+824,shore,5
+825,shoulder,4
+826,shredded,2
+827,side slit,4
+828,side-slit,4
+829,single-button,4
+830,skater,3
+831,skinny,3
+832,skinny stretch,3
+833,skort,3
+834,sky,5
+835,sleek,2
+836,sleeve,4
+837,sleeveless,4
+838,slick,2
+839,slim,3
+840,slip,3
+841,slit,4
+842,slouchy,3
+843,slub,2
+844,slub-knit,2
+845,smart,5
+846,smile,5
+847,smock,3
+848,smocked,3
+849,snap,5
+850,snoopy,5
+851,soft,5
+852,solid,5
+853,sophisticated,1
+854,southwestern,1
+855,southwestern-inspired,1
+856,southwestern-patterned,1
+857,southwestern-print,1
+858,sparkling,2
+859,speckled,1
+860,spirit,5
+861,splatter,1
+862,split,4
+863,split-back,4
+864,split-neck,4
+865,spongebob,5
+866,sporty,5
+867,spotted,1
+868,springs,5
+869,square,3
+870,standout,5
+871,star,5
+872,stars,5
+873,stone,2
+874,stone washed,2
+875,stones,2
+876,straight-leg,3
+877,strap,4
+878,strapless,4
+879,strapless tribal,4
+880,strappy,4
+881,stretch,2
+882,stretch-knit,2
+883,stripe,1
+884,striped,1
+885,striped trapeze,3
+886,striped v-neck,4
+887,stripes,1
+888,structured,1
+889,studded,2
+890,studio,5
+891,suede,2
+892,summer,5
+893,sun,5
+894,sunburst,5
+895,sunflower,5
+896,surfer,5
+897,surplice,4
+898,suspender,4
+899,sweet,5
+900,sweetheart,5
+901,swim,5
+902,swing,3
+903,swiss,5
+904,t-back,4
+905,taco,5
+906,tapestry,2
+907,tartan,2
+908,tasmanian,5
+909,tassel,4
+910,tasseled,4
+911,terry,2
+912,texas,5
+913,textured,2
+914,textured woven,2
+915,thermal,5
+916,tie-back,4
+917,tie-dye,2
+918,tie-front,4
+919,tie-neck,4
+920,tiered,2
+921,tile,2
+922,toggle,4
+923,tokyo,5
+924,tonal,1
+925,topstitched,4
+926,tower,5
+927,track,5
+928,training,5
+929,trapeze,3
+930,tree,5
+931,trench,5
+932,triangle,5
+933,tribal,1
+934,tribal-inspired,1
+935,trim,4
+936,trimmed,4
+937,tropical,5
+938,trouble,5
+939,trouser,3
+940,tube,3
+941,tulip,3
+942,tulip-back,4
+943,tulle,2
+944,tunic,3
+945,tupac,5
+946,turtle-neck,4
+947,tweed,2
+948,twill,2
+949,twist-front,4
+950,twisted,4
+951,two-button,4
+952,two-tone,1
+953,utility,5
+954,v-back,4
+955,v-cut,4
+956,v-neck,4
+957,van,5
+958,varsity,5
+959,varsity-striped,1
+960,velvet,2
+961,velveteen,2
+962,venice,5
+963,vent,4
+964,vented hem,4
+965,vertical,3
+966,voyager,5
+967,waffle,2
+968,wake,5
+969,wash,2
+970,washed,2
+971,watercolor,1
+972,wave,5
+973,weekend,5
+974,west,5
+975,wide-leg,3
+976,wifey,5
+977,wild,5
+978,wildflower,5
+979,windbreaker,3
+980,windowpane,3
+981,woke,5
+982,workout,5
+983,woven,2
+984,wrap,3
+985,y-back,4
+986,yoga,5
+987,yoke,5
+988,york,5
+989,youth,5
+990,zeppelin,5
+991,zig,1
+992,zigzag,1
+993,zip,4
+994,zip-front,4
+995,zip-pocket,4
+996,zip-up,4
+997,zipped,4
+998,zipper,4
+999,zippered,4

@@ -17,7 +17,15 @@ def get_data(input_path):
 
 		for line in f:
 			line_split = line.strip().split(',')
-			(filename,x1,y1,x2,y2,class_name) = line_split
+			if len(line_split) == 7:
+			    filename = line_split[0] + ','+line_split[1]
+			    x1 = line_split[2]
+			    y1 = line_split[3]
+			    x2 = line_split[4]
+			    y2 = line_split[5]
+			    class_name = line_split[6]
+			else:
+				(filename,x1,y1,x2,y2,class_name) = line_split
 
 			if class_name not in classes_count:
 				classes_count[class_name] = 1

@@ -146,7 +146,7 @@ except:
 	print('Could not load pretrained model weights. Weights can be found in the keras application folder \
 		https://github.com/fchollet/keras/tree/master/keras/applications')
 
-#pdb.set_trace()
+pdb.set_trace()
 optimizer = Adam(lr=1e-5)
 optimizer_classifier = Adam(lr=1e-5)
 model_rpn.compile(optimizer=optimizer, loss=[losses.rpn_loss_cls(num_anchors), losses.rpn_loss_regr(num_anchors)])
@@ -169,7 +169,7 @@ print('Starting training')
 
 vis = True
 
-pdb.set_trace()
+# pdb.set_trace()
 
 for epoch_num in range(num_epochs):
 
@@ -238,7 +238,7 @@ for epoch_num in range(num_epochs):
 					sel_samples = random.choice(pos_samples)
 
 			print X.shape, np.max(X2)
-			pdb.set_trace()
+			#pdb.set_trace()
 			loss_class = model_classifier.train_on_batch([X, X2[:, sel_samples, :]], [Y1[:, sel_samples, :], Y2[:, sel_samples, :]])
 
 			losses[iter_num, 0] = loss_rpn[1]

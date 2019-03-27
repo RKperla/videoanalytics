@@ -14,16 +14,27 @@ def get_data(input_path):
 	with open(input_path,'r') as f:
 
 		print('Parsing annotation files')
-
+		count = 0
 		for line in f:
 			line_split = line.strip().split(',')
+			count = count +1
+			if count % 10000 == 0: print count
 			if len(line_split) == 7:
 			    filename = line_split[0] + ','+line_split[1]
+			    #print filename
 			    x1 = line_split[2]
 			    y1 = line_split[3]
 			    x2 = line_split[4]
 			    y2 = line_split[5]
 			    class_name = line_split[6]
+			elif len(line_split) == 8:
+			    filename = line_split[0] + ','+line_split[1] + ',' + line_split[2]
+			    #print filename
+			    x1 = line_split[3]
+			    y1 = line_split[4]
+			    x2 = line_split[5]
+			    y2 = line_split[6]
+			    class_name = line_split[7]
 			else:
 				(filename,x1,y1,x2,y2,class_name) = line_split
 

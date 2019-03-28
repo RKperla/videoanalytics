@@ -56,7 +56,7 @@ df["labels"] = df["atts"].apply(lambda x:list(x))
 
 def name(x):
     name = str.split(x,'/')
-    return '/Users/1024329/Downloads/DeepFashion/img_n/'+ name[1]+'/'  + name[2]
+    return '/fashion-attribute/rk/img_bbox_data/img_n/'+ name[1]+'/'  + name[2]
     #return '/fashion-attribute/storage_bucket/deep_fashion/img_bbox_data/img_n/' + name[1] + '/' + name[2]
 #/fashion-attribute/storage_bucket/small_data_set/work/train/Blazer/Double-Breasted_Blazer
 
@@ -75,7 +75,7 @@ df4 =df[sample]
 # In[2]:
 
 
-df_cat = pd.read_csv('/Users/1024329/Downloads/DeepFashion/processed_data/list_attr_cloth.csv')
+df_cat = pd.read_csv('list_attr_cloth.csv')
 
 
 
